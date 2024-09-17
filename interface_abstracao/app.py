@@ -29,7 +29,7 @@ if __name__ == "__main__":
         op = input('Informe a ação que deseja fazer: ')
 
         if op == '1':
-            print(f'Saldo disponivel em conta R$ {cc.saldo():,.2f}')
+            print(f'Saldo disponivel em conta R$ {cc.saldo}')
             continue
         elif op == '2':
             deposito = float(input('Informe o valor do depósito: ').replace(',','.'))
@@ -41,7 +41,7 @@ if __name__ == "__main__":
             continue
         elif op == '3':
             saque = float(input('Informe o valor do saque: ').replace(',','.'))
-            if saque <= cc.saldo
+            if saque <= cc.saldo:
                 cc.fazer_saque(saque)
                 print(f'Saque efetuado no valor de R$ {saque}.')
             else:
