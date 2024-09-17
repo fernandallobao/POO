@@ -66,7 +66,7 @@ class ContaCorrente(Conta):
         self.__saldo = saldo
 
 
-# NOTE: par chamar os metodos no programa principal eu preciso chamar os métodos da superclasse dentro da subclasse    
+# NOTE: para chamar os metodos no programa principal eu preciso chamar os métodos da superclasse dentro da subclasse    
 
     #metodos da classe abstrata
     def consultar_saldo(self):

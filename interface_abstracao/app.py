@@ -9,14 +9,16 @@ if __name__ == "__main__":
     cc.nome = input('Informe o nome do titular: ')
     cc.cpf = input('Informe o cpf do titular: ')
 
-    print('\n')
-    print(f'{'-'*10}Dados do Titular{'-'*10}')
-    print(f'Titular da conta: {cc.nome}.')
-    print(f'CPF: {cc.cpf}.')
-    print(f'Agencia: {cc.agencia}.')
-    print(f'Conta: {cc.conta}.')
+    
     
     while True:
+        print('\n')
+        print(f'{'-'*10}Dados do Titular{'-'*10}')
+        print(f'Titular da conta: {cc.nome}.')
+        print(f'CPF: {cc.cpf}.')
+        print(f'Agencia: {cc.agencia}.')
+        print(f'Conta: {cc.conta}.')
+
         print('\n')
         print(f'{'-'*10}Banco Cobra{'-'*10}')
         print('1 - Saldo')
@@ -27,17 +29,23 @@ if __name__ == "__main__":
         op = input('Informe a ação que deseja fazer: ')
 
         if op == '1':
-            print('Saldo em conta R$ {cc.saldo}')
+            print(f'Saldo disponivel em conta R$ {cc.saldo():,.2f}')
             continue
         elif op == '2':
-            deposito = int(input('Informe o valor do depósito: '))
-            cc.fazer_deposito(deposito)
-            print(f'Depósito efetuado com sucesso!')
+            deposito = float(input('Informe o valor do depósito: ').replace(',','.'))
+            if deposito > 0:
+                cc.fazer_deposito(deposito)
+                print(f'Depósito efetuado com sucesso!')
+            else:
+                print('Valor inválido')
             continue
         elif op == '3':
-            saque = int(input('Informe o valor do saque: '))
-            cc.fazer_saque(saque)
-            print(f'Saque efetuado no valor de R$ {saque:,.2f}.')
+            saque = float(input('Informe o valor do saque: ').replace(',','.'))
+            if saque <= cc.saldo
+                cc.fazer_saque(saque)
+                print(f'Saque efetuado no valor de R$ {saque}.')
+            else:
+                print('Saldo em conta insuficiente!')
             continue
         else:
             break
