@@ -7,33 +7,34 @@ class Cliente:
         self.__cpf = cpf
         self.__idade = idade
         self.__telefone = telefone
+        self.carros_alugados = []
 
     @property
-    def _nome(self):
+    def nome(self):
         return self.__nome
-    @_nome.setter
-    def _nome(self, nome):
+    @nome.setter
+    def nome(self, nome):
         self.__nome = nome
 
     @property
-    def _cpf(self):
+    def cpf(self):
         return self.__cpf
-    @_cpf.setter
-    def _cpf(self, cpf):
+    @cpf.setter
+    def cpf(self, cpf):
         self.__cpf = cpf
 
     @property
-    def _idade(self):
+    def idade(self):
         return self.__idade
-    @_idade.setter
-    def _idade(self, idade):
+    @idade.setter
+    def idade(self, idade):
         self.__idade = idade
 
     @property
-    def _telefone(self):
+    def telefone(self):
         return self.__telefone
-    @_telefone.setter
-    def _telefone(self, telefone):
+    @telefone.setter
+    def telefone(self, telefone):
         self.__telefone = telefone
 
     def aluga_carro(self, carro):
@@ -54,6 +55,7 @@ class Carro:
         self.__cor = cor
         self.__ano = ano
         self.__preco = preco
+        self.cliente_do_carro = []
 
     @property
     def _modelo(self):
@@ -88,4 +90,14 @@ class Carro:
         self.__preco = preco
 
 
-    
+    #metodos de ação
+    def adicionar_carro(self, cliente):
+        if cliente not in self.cliente_do_carro:
+            self.cliente_do_carro.apeend(cliente)
+            cliente.aluga_carro(self)
+
+    def listar_clientes(self):
+        lista = []
+        for cliente in self.clientes_do_carro:
+            lista.append(cliente.nome)
+            return lista

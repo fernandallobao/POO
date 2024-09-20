@@ -1,4 +1,4 @@
-from modulo import *
+xfrom modulo import *
 
 if __name__ == "__main__":
     #instanciando aluno
