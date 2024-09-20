@@ -9,7 +9,7 @@ if __name__ == '__main__':
     #entrada de dados
     usuario.nome = input('Informe o nome do usuário: ')
     usuario.idade = input('Informe a idade do usuário: ')
-    usuario.endereco = endereco_pessoal
+    
 
     #composicao de dados do endereco
     usuario.endereco = endereco_pessoal
