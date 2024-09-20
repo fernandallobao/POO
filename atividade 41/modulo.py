@@ -58,46 +58,46 @@ class Carro:
         self.cliente_do_carro = []
 
     @property
-    def _modelo(self):
+    def modelo(self):
         return self.__modelo
 
-    @_modelo.setter
-    def _modelo(self, modelo):
+    @modelo.setter
+    def modelo(self, modelo):
         self.__modelo = modelo
 
     @property
-    def _cor(self):
+    def cor(self):
         return self.__cor
 
-    @_cor.setter
+    @cor.setter
     def _cor(self, cor):
         self.__cor = cor
 
     @property
-    def _ano(self):
+    def ano(self):
         return self.__ano
 
-    @_ano.setter
-    def _ano(self, ano):
+    @ano.setter
+    def ano(self, ano):
         self.__ano = ano
 
     @property
-    def _preco(self):
+    def preco(self):
         return self.__preco
 
-    @_preco.setter
-    def _preco(self, preco):
+    @preco.setter
+    def preco(self, preco):
         self.__preco = preco
 
 
     #metodos de ação
     def adicionar_carro(self, cliente):
         if cliente not in self.cliente_do_carro:
-            self.cliente_do_carro.apeend(cliente)
+            self.cliente_do_carro.append(cliente)
             cliente.aluga_carro(self)
 
     def listar_clientes(self):
         lista = []
-        for cliente in self.clientes_do_carro:
+        for cliente in self.cliente_do_carro:
             lista.append(cliente.nome)
             return lista
